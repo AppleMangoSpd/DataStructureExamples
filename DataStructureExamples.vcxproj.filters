@@ -32,5 +32,8 @@
     <ClInclude Include="IIterator.h">
       <Filter>헤더 파일\Iterator</Filter>
     </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

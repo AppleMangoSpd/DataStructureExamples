@@ -16,12 +16,14 @@ int main()
 	CircularLinkedList<std::string>* CLLSample = new CircularLinkedList<std::string>();
 	
 	CLLSample->PushFront("one");
-	CLLSample->PushFront("two");
+	CLLSample->PushBack("two");
 	CLLSample->PushBack("three");
-	CircularLinkedList_Iterator<std::string>* CLLIter 
+	IIterator<std::string>* CLLIter 
 		= new CircularLinkedList_Iterator<std::string>(CLLSample);
-
-
+	CLLIter = CLLSample->Begin();
+	std::cout << CLLIter->CurrentData();
+	CLLIter = CLLIter->Next();
+	std::cout << CLLIter->CurrentData();
 
 	delete arraySample;
 	delete CLLSample;
