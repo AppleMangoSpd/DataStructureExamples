@@ -3,11 +3,11 @@
 #include "IIterator.h"
 
 template <typename T>
-struct node
+struct Node
 {
 	T data;
-	node* prev;
-	node* next;
+	Node* prev;
+	Node* next;
 };
 
 template <typename T>
@@ -30,7 +30,7 @@ public:
 
 	void PushFront(T data)
 	{
-		node<T>* newNode = new node<T>;
+		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
 		if (_head == nullptr)
 		{
@@ -48,7 +48,7 @@ public:
 	
 	void PushBack(T data)
 	{
-		node<T>* newNode = new node<T>;
+		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
 		if (_head == nullptr)
 		{
@@ -90,7 +90,7 @@ public:
 		}
 		int index = 1;
 
-		node<T>* resultNode;
+		Node<T>* resultNode;
 		resultNode = this->_head;
 		while (index < target)
 		{
@@ -112,8 +112,21 @@ public:
 		}
 	}
 
+	void PrintList()
+	{
+		IIterator<T>* iter = new CircularLinkedList_Iterator<T>(this);
+		iter = this->Begin();
+		for (int i = 0; i < _size; i++)
+		{
+			std::cout << iter->CurrentData() << " ";
+			iter->Next();
+		}
+
+		delete iter;
+	}
+
 private:
-	void setFirstNode(node<T>* firstNode)
+	void setFirstNode(Node<T>* firstNode)
 	{
 		this->_head = firstNode;
 		this->_tail = firstNode;
@@ -123,8 +136,8 @@ private:
 	}
 
 	int _size;
-	node<T>* _head;
-	node<T>* _tail;
+	Node<T>* _head;
+	Node<T>* _tail;
 
 	IIterator<T>* _iter;
 };
@@ -166,7 +179,7 @@ public:
 		{
 			_index = 1;
 		}
-		returnIter->SetIndex(_circularLinkedList->SizeOf());
+		returnIter->SetIndex(_index);
 
 		return returnIter;
 	};
