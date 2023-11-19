@@ -26,6 +26,44 @@ public:
 	};
 	TreeNode<T>* Find(TreeNode<T>* root, const T& target)
 	{
+		return Find_impl(root, target);
+	};
+	bool AddSubordinate(const T& parent, const T& child)
+	{
+		return AddSubordinate_impl(parent, child);
+	};
+
+	const TreeNode<T>* GetRoot() const
+	{
+		return this->_root;
+	};
+	void SetRoot(TreeNode<T>* target)
+	{
+		this->_root = target;
+	};
+
+	void PreOrder() const
+	{
+		this->PreOrder_impl(this->_root);
+	};
+	void InOrder() const
+	{
+		this->InOrder_impl(this->_root);
+	};
+	void PostOrder() const
+	{
+		this->PostOrder_impl(this->_root);
+	};
+	void LevelOrder() const
+	{
+		this->LevelOrder_impl(this->_root);
+	};
+
+	
+private:
+	Tree() {};
+	TreeNode<T>* Find_impl(TreeNode<T>* root, const T& target) 
+	{
 		if (root == nullptr)
 		{
 			return nullptr;
@@ -35,15 +73,15 @@ public:
 			return root;
 		}
 
-		TreeNode<T>* firstFound = this->Find(root->_first, target);
+		TreeNode<T>* firstFound = this->Find_impl(root->_first, target);
 		if (firstFound != nullptr)
 		{
 			return firstFound;
 		}
-		
-		return this->Find(root->_second, target);
+
+		return this->Find_impl(root->_second, target);
 	};
-	bool AddSubordinate(const T& parent, const T& child)
+	bool AddSubordinate_impl(const T& parent, const T& child)
 	{
 		TreeNode<T>* parentTreeNode = this->Find(_root, parent);
 		if (!parentTreeNode)
@@ -65,54 +103,37 @@ public:
 		return true;
 	};
 
-	const TreeNode<T>* GetRoot() const
-	{
-		return this->_root;
-	};
-	void SetRoot(TreeNode<T>* target)
-	{
-		this->_root = target;
-	};
-private:
-	Tree() {};
-	TreeNode<T>* _root;
-};
-
-template <typename T>
-class TreeTraversal
-{
-public:
-	void PreOrder(const TreeNode<T>* start) const 
+	void PreOrder_impl(const TreeNode<T>* start) const
 	{
 		if (!start)
 		{
 			return;
 		}
 		std::cout << start->_data << ", ";
-		PreOrder(start->_first);
-		PreOrder(start->_second);
+		PreOrder_impl(start->_first);
+		PreOrder_impl(start->_second);
 	};
-	void InOrder(const TreeNode<T>* start) const 
+	void InOrder_impl(const TreeNode<T>* start) const
 	{
 		if (!start)
 		{
 			return;
 		}
-		InOrder(start->_first);
+		InOrder_impl(start->_first);
 		std::cout << start->_data << ", ";
-		InOrder(start->_second);
+		InOrder_impl(start->_second);
 	};
-	void PostOrder(const TreeNode<T>* start) const
+	void PostOrder_impl(const TreeNode<T>* start) const
 	{
 		if (!start)
 		{
 			return;
 		}
-		PostOrder(start->_first);
-		PostOrder(start->_second);
+		PostOrder_impl(start->_first);
+		PostOrder_impl(start->_second);
 		std::cout << start->_data << ", ";
 	};
-	void LevelOrder(const TreeNode<T>* start) const
+	void LevelOrder_impl(const TreeNode<T>* start) const
 	{
 		if (!start)
 		{
@@ -142,4 +163,6 @@ public:
 			std::cout << std::endl;
 		}
 	};
+
+	TreeNode<T>* _root;
 };

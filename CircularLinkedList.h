@@ -30,6 +30,64 @@ public:
 
 	void PushFront(T data)
 	{
+		this->PushFront_impl(data);
+	};
+	void PushBack(const T data)
+	{
+		this->PushBack_impl(data);
+	};
+
+	const int SizeOf() const
+	{
+		return this->_size;
+	};
+
+	IIterator<T>* Begin() const
+	{
+		return this->_iter->First();
+	}
+	IIterator<T>* End() const
+	{
+		return this->_iter->Last();
+	}
+	IIterator<T>* GetIterator() const
+	{
+		return this->_iter;
+	}
+
+	T At(const int target) const
+	{
+		return this->At_impl(target);
+	}
+
+	bool IsEmpty() const
+	{
+		if (_head == nullptr)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	void PrintList()
+	{
+		this->PrintList_impl();
+	}
+
+private:
+	void setFirstNode(Node<T>* firstNode)
+	{
+		this->_head = firstNode;
+		this->_tail = firstNode;
+
+		firstNode->prev = firstNode;
+		firstNode->next = firstNode;
+	}
+	void PushFront_impl(const T data)
+	{
 		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
 		if (_head == nullptr)
@@ -45,8 +103,7 @@ public:
 		}
 		_size++;
 	};
-	
-	void PushBack(T data)
+	void PushBack_impl(const T data)
 	{
 		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
@@ -63,25 +120,8 @@ public:
 		}
 		_size++;
 	};
-	const int SizeOf() const
-	{
-		return this->_size;
-	};
 
-	IIterator<T>* Begin() const
-	{
-		return _iter->First();
-	}
-	IIterator<T>* End() const
-	{
-		return _iter->Last();
-	}
-	IIterator<T>* GetIterator() const
-	{
-		return _iter;
-	}
-
-	T At(const int target) const
+	T At_impl(const int target) const
 	{
 		if (this->SizeOf() < target)
 		{
@@ -100,19 +140,7 @@ public:
 		return resultNode->data;
 	}
 
-	bool IsEmpty() const
-	{
-		if (_head == nullptr)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	void PrintList()
+	void PrintList_impl()
 	{
 		IIterator<T>* iter = new CircularLinkedList_Iterator<T>(this);
 		iter = this->Begin();
@@ -123,16 +151,6 @@ public:
 		}
 
 		delete iter;
-	}
-
-private:
-	void setFirstNode(Node<T>* firstNode)
-	{
-		this->_head = firstNode;
-		this->_tail = firstNode;
-
-		firstNode->prev = firstNode;
-		firstNode->next = firstNode;
 	}
 
 	int _size;

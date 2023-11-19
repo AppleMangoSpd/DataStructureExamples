@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Array.h" />
+    <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="CircularLinkedList.h" />
     <ClInclude Include="IIterator.h" />
     <ClInclude Include="Tree.h" />

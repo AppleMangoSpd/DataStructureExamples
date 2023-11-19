@@ -1,10 +1,11 @@
 ﻿  main.cpp
-E:\C++works\DataStructureExamples\Tree.h(126,13): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-E:\C++works\DataStructureExamples\Tree.h(115,7): message : 클래스 템플릿 멤버 함수 'void TreeTraversal<int>::LevelOrder(const TreeNode<T> *) const'을(를) 컴파일하는 중입니다.
+E:\C++works\DataStructureExamples\Tree.h(147,13): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\C++works\DataStructureExamples\Tree.h(136,7): message : 클래스 템플릿 멤버 함수 'void Tree<int>::LevelOrder_impl(const TreeNode<T> *) const'을(를) 컴파일하는 중입니다.
           with
           [
               T=int
           ]
-E:\C++works\DataStructureExamples\main.cpp(46,33): message : 'main'에서 'TreeTraversal<int>::LevelOrder'에 대한 첫 번째 참조를 확인하세요.
-E:\C++works\DataStructureExamples\main.cpp(32,66): message : 컴파일되는 클래스 템플릿 인스턴스화 'TreeTraversal<int>'에 대한 참조를 확인하세요.
+E:\C++works\DataStructureExamples\Tree.h(59,24): message : 'Tree<int>::LevelOrder'에서 'Tree<int>::LevelOrder_impl'에 대한 첫 번째 참조를 확인하세요.
+E:\C++works\DataStructureExamples\main.cpp(45,24): message : 'main'에서 'Tree<int>::LevelOrder'에 대한 첫 번째 참조를 확인하세요.
+E:\C++works\DataStructureExamples\main.cpp(31,47): message : 컴파일되는 클래스 템플릿 인스턴스화 'Tree<int>'에 대한 참조를 확인하세요.
   DataStructureExamples.vcxproj -> E:\C++works\DataStructureExamples\x64\Debug\DataStructureExamples.exe

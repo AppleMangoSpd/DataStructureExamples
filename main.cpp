@@ -29,28 +29,27 @@ int main()
 	CLLSample->PrintList();
 
 	Tree<int>* treeSample = Tree<int>::CreateTree(1);
-	TreeTraversal<int>* treeTraversalSample = new TreeTraversal<int>();
+	
 	treeSample->AddSubordinate(1, 2);
 	treeSample->AddSubordinate(2, 3);
 	treeSample->AddSubordinate(3, 4);
 	treeSample->AddSubordinate(4, 5);
 	treeSample->AddSubordinate(5, 6);
 
+	treeSample->PreOrder();
+	std::cout << std::endl;
+	treeSample->InOrder();
+	std::cout << std::endl;
+	treeSample->PostOrder();
+	std::cout << std::endl;
+	treeSample->LevelOrder();
+	std::cout << std::endl;
 
-	treeTraversalSample->PreOrder(treeSample->GetRoot());
-	std::cout << std::endl;
-	treeTraversalSample->InOrder(treeSample->GetRoot());
-	std::cout << std::endl;
-	treeTraversalSample->PostOrder(treeSample->GetRoot());
-	std::cout << std::endl;
-	treeTraversalSample->LevelOrder(treeSample->GetRoot());
-	std::cout << std::endl;
 
 	delete arraySample;
 	delete CLLSample;
 	delete CLLIter;
 	delete treeSample;
-	delete treeTraversalSample;
 
 	return 0;
 }
