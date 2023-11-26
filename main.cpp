@@ -1,6 +1,7 @@
 #include "Array.h"
 #include "CircularLinkedList.h"
 #include "Tree.h"
+#include "BinarySearchTree.h"
 
 int main()
 {
@@ -45,11 +46,23 @@ int main()
 	treeSample->LevelOrder();
 	std::cout << std::endl;
 
+	BinarySearchTree* bstSample = new BinarySearchTree();
+	bstSample->Insert(1);
+	bstSample->Insert(2);
+	bstSample->Insert(3);
+	bstSample->Insert(4);
+	bstSample->Insert(5);
+	bstSample->Insert(6);
+
+	bstSample->InOrder();
+	bstSample->DescendingOrder();
+
 
 	delete arraySample;
 	delete CLLSample;
 	delete CLLIter;
 	delete treeSample;
+	delete bstSample;
 
 	return 0;
 }

@@ -6,6 +6,6 @@ E:\C++works\DataStructureExamples\Tree.h(136,7): message : 클래스 템플릿 �
               T=int
           ]
 E:\C++works\DataStructureExamples\Tree.h(59,24): message : 'Tree<int>::LevelOrder'에서 'Tree<int>::LevelOrder_impl'에 대한 첫 번째 참조를 확인하세요.
-E:\C++works\DataStructureExamples\main.cpp(45,24): message : 'main'에서 'Tree<int>::LevelOrder'에 대한 첫 번째 참조를 확인하세요.
-E:\C++works\DataStructureExamples\main.cpp(31,47): message : 컴파일되는 클래스 템플릿 인스턴스화 'Tree<int>'에 대한 참조를 확인하세요.
+E:\C++works\DataStructureExamples\main.cpp(46,24): message : 'main'에서 'Tree<int>::LevelOrder'에 대한 첫 번째 참조를 확인하세요.
+E:\C++works\DataStructureExamples\main.cpp(32,47): message : 컴파일되는 클래스 템플릿 인스턴스화 'Tree<int>'에 대한 참조를 확인하세요.
   DataStructureExamples.vcxproj -> E:\C++works\DataStructureExamples\x64\Debug\DataStructureExamples.exe
