@@ -64,7 +64,7 @@ private:
 	Tree() {};
 	TreeNode<T>* Find_impl(TreeNode<T>* root, const T& target) 
 	{
-		if (root == nullptr)
+		if (nullptr == root)
 		{
 			return nullptr;
 		}
@@ -74,7 +74,7 @@ private:
 		}
 
 		TreeNode<T>* firstFound = this->Find_impl(root->_first, target);
-		if (firstFound != nullptr)
+		if (nullptr != firstFound)
 		{
 			return firstFound;
 		}
@@ -144,7 +144,7 @@ private:
 
 		while (!nodeQueue.empty())
 		{
-			int size = nodeQueue.size();
+			size_t size = nodeQueue.size();
 			for (int i = 0; i < size; i++)
 			{
 				const TreeNode<T>* current = nodeQueue.front();

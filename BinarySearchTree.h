@@ -45,6 +45,7 @@ public:
 	void DeleteValue(const int target)
 	{
 		_root = Delete_impl(_root, target);
+		std::cout << target << " Deleted" << std::endl;
 	};
 
 private:
@@ -63,11 +64,11 @@ private:
 		}
 		if (target < current->_index)
 		{
-			std::cout << "move from " << current->_index << " to left node";
+			std::cout << "move from " << current->_index << " to left node ";
 			return Find_impl(current->_left, target);
 		}
 		
-		std::cout << "move from " << current->_index << " to right node";
+		std::cout << "move from " << current->_index << " to right node ";
 		return Find_impl(current->_right, target);
 	};
 

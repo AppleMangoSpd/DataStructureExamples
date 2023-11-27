@@ -62,7 +62,7 @@ public:
 
 	bool IsEmpty() const
 	{
-		if (_head == nullptr)
+		if (nullptr == _head)
 		{
 			return true;
 		}
@@ -90,7 +90,7 @@ private:
 	{
 		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
-		if (_head == nullptr)
+		if (nullptr == _head)
 		{
 			setFirstNode(newNode);
 		}
@@ -107,7 +107,7 @@ private:
 	{
 		Node<T>* newNode = new Node<T>;
 		newNode->data = data;
-		if (_head == nullptr)
+		if (nullptr == _head)
 		{
 			setFirstNode(newNode);
 		}
