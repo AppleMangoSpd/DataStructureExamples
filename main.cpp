@@ -3,6 +3,7 @@
 #include "Tree.h"
 #include "BinarySearchTree.h"
 #include "NTree.h"
+#include "Deque.h"
 
 int main()
 {
@@ -61,6 +62,7 @@ int main()
 	std::cout << "BinarySearchTree Sample Test Start" << std::endl;
 
 	BinarySearchTree* bstSample = new BinarySearchTree();
+	std::cout << "Insert 12, 10, 20, 8, 11, 15, 28, 4, 2 to bstSample" << std::endl;
 	bstSample->Insert(12);
 	bstSample->Insert(10);
 	bstSample->Insert(20);
@@ -96,6 +98,17 @@ int main()
 	std::cout << ntreeSample->Find("third")->_name << std::endl;
 	std::cout << std::endl;
 	std::cout << "NTree Sample Test End" << std::endl;
+
+	std::cout << "Deque Sample Test Start" << std::endl;
+	Deque<int>* dequeSample = new Deque<int>(100);
+	dequeSample->AddFront(1);
+	dequeSample->AddFront(0);
+	dequeSample->AddRear(2);
+	std::cout << "Add 1, 0 at front, add 2 at rear" << std::endl;
+	std::cout << "dequeSample[0] is " << dequeSample->At(0) << std::endl;
+	std::cout << "dequeSample[1] is " << dequeSample->At(1) << std::endl;
+	std::cout << "dequeSample[2] is " << dequeSample->At(2) << std::endl;
+	std::cout << "Deque Sample Test End" << std::endl;
 
 	delete arraySample;
 	delete CLLSample;
