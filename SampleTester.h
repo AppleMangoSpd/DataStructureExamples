@@ -1,32 +1,31 @@
 #pragma once
 
-template<typename T> class Array;
-template<typename T> class CircularLinkedList;
-template<typename T> class Tree;
-class BinarySearchTree;
-template<typename T> class NTree;
-template<typename T> class Deque;
-
-typedef enum 
+enum DATA_STRUCTURES
 {
-	INT,
-	CHAR,
-	STRING
-
-}TYPE;
+	BEGIN_OF_DATA_STRUCTURES,
+	ARRAY,
+	CLL,
+	TREE,
+	BST,
+	NTREE,
+	DEQUE,
+	END_OF_DATA_STRUCTURES
+};
 
 class SampleTester
 {
 public:
 	SampleTester();
 	~SampleTester();
+	void StartTest(DATA_STRUCTURES target);
+	void StartAllTest();
 
+private:
 	void ArrayTest();
 	void CLLTest();
 	void TreeTest();
 	void BSTTest();
 	void NTreeTest();
 	void DequeTest();
-private:
-	void DeleteAll();
+	
 };
